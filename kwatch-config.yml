@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kwatch
+  namespace: kwatch
+data:
+  config.yaml: |
+    maxRecentLogLines: 30
+    ignoreFailedGracefulShutdown: true
+    pvcMonitor:
+        enabled: true
+    pvcMonitor.threshold: 20
+    alert:
+      mattermost:
+          webhook: "https://exmalple.com/*"
+  
